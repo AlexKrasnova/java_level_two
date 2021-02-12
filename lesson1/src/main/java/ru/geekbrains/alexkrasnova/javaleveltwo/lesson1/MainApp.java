@@ -42,13 +42,13 @@ public class MainApp {
             boolean success = true;
             for (Obstacle obstacle : obstacles) {
                 if (obstacle instanceof RunningTrack) {
-                    if(!athlete.run(obstacle.getSize())){
+                    if (!athlete.run(obstacle.getSize())) {
                         System.out.printf("Атлет %s выбыл, не преодолев препятствие длиной %s м\n\n", athlete.getIdentifier(), obstacle.getSize());
                         success = false;
                         break;
                     }
                 } else if (obstacle instanceof Wall) {
-                    if(!athlete.jump(obstacle.getSize())){
+                    if (!athlete.jump(obstacle.getSize())) {
                         System.out.printf("Атлет %s выбыл, не преодолев препятствие высотой %s см\n\n", athlete.getIdentifier(), obstacle.getSize());
                         success = false;
                         break;
@@ -60,6 +60,7 @@ public class MainApp {
                 System.out.printf("Атлет %s успешно преодолел полосу препятствий\n\n", athlete.getIdentifier());
             }
         }
-        System.out.printf("Полосу перпятствий успешно преодолели %d атлетов\n", successfulAttempts);;
+        System.out.printf("Полосу перпятствий успешно преодолели %d атлетов\n", successfulAttempts);
+        ;
     }
 }
