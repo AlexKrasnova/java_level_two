@@ -53,6 +53,5 @@ public class MainApp {
             }
         }
         System.out.printf("Количество атлетов, успешно преодолевших полосу перпятствий: %d\n", successfulAttempts);
-        ;
     }
 }
