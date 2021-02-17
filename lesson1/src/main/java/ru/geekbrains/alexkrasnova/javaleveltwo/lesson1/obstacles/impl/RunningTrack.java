@@ -1,5 +1,6 @@
 package ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.obstacles.impl;
 
+import ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.athletes.Athlete;
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.obstacles.Obstacle;
 
 public class RunningTrack implements Obstacle {
@@ -11,7 +12,12 @@ public class RunningTrack implements Obstacle {
     }
 
     @Override
-    public int getSize() {
-        return length;
+    public boolean overcomeObstacle(Athlete athlete) {
+        return athlete.run(length);
+    }
+
+    @Override
+    public String getDescription() {
+        return "препятствие длиной " + length + " м";
     }
 }

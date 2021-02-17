@@ -1,5 +1,6 @@
 package ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.obstacles.impl;
 
+import ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.athletes.Athlete;
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson1.obstacles.Obstacle;
 
 public class Wall implements Obstacle {
@@ -11,7 +12,12 @@ public class Wall implements Obstacle {
     }
 
     @Override
-    public int getSize() {
-        return height;
+    public boolean overcomeObstacle(Athlete athlete) {
+        return athlete.jump(height);
+    }
+
+    @Override
+    public String getDescription() {
+        return "препятствие высотой " + height + " см";
     }
 }
