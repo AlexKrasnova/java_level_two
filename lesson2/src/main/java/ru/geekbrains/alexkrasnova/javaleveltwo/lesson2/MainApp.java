@@ -16,30 +16,12 @@ public class MainApp {
                 {"0", "1", "2", "3"}
         };
 
-        try {
-            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array1));
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-        } catch (MyArrayDataException e) {
-            e.printStackTrace();
-        }
-
-
         String[][] array2 = {
                 {"0", "1", "2", "3"},
                 {"0", "1", "2", "3"},
                 {"0", "1", "2"},
                 {"0", "1", "2", "3"}
         };
-
-        try {
-            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array2));
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-        } catch (MyArrayDataException e) {
-            e.printStackTrace();
-        }
-
 
         String[][] array3 = {
                 {"0", "1", "d", "3"},
@@ -48,28 +30,12 @@ public class MainApp {
                 {"0", "1", "2", "3"}
         };
 
-        try {
-            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array3));
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-        } catch (MyArrayDataException e) {
-            e.printStackTrace();
-        }
-
-
         String[][] array4 = {
                 {"0", "1", "2", "3"},
                 {"0", "1", "2", "3"},
                 {"0", "1", "2", "3"},
                 {"0", "`", "2", "3"}
         };
-
-        try {
-            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array4));
-        } catch (MyArrayException e) {
-            e.printStackTrace();
-        }
-
 
         String[][] array5 = {
                 {"0", "1", "2", "3"},
@@ -78,13 +44,11 @@ public class MainApp {
                 {"0", "1", "2", "3"}
         };
 
-        try {
-            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array5));
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-        } catch (MyArrayDataException e) {
-            e.printStackTrace();
-        }
+        test(array1);
+        test(array2);
+        test(array3);
+        test(array4);
+        test(array5);
 
     }
 
@@ -108,5 +72,17 @@ public class MainApp {
             }
         }
         return sum;
+    }
+
+    public static void test(String[][] array) {
+        try {
+            System.out.println("Сумма элементов массива равна " + convertAndSumArray(array));
+        } catch (MyArraySizeException e) {
+            e.printStackTrace();
+        } catch (MyArrayDataException e) {
+            e.printStackTrace();
+            array[e.getIndex1()][e.getIndex2()] = "0";
+            test(array);
+        }
     }
 }
