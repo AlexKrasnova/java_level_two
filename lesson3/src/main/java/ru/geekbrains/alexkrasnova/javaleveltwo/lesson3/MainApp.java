@@ -10,8 +10,27 @@ import java.util.*;
 public class MainApp {
     public static void main(String[] args) {
         testArrayFunctions();
-        testPhonebook();
-        testPhonebook2();
+
+        testPhonebook(new Phonebook1(new ArrayList<>(Arrays
+                .asList(
+                        new Person("Куприн", "+74952334413"),
+                        new Person("Толстой", "+74993334414"),
+                        new Person("Пушкин", "+74953334444"),
+                        new Person("Пушкин", "+74951544433"),
+                        new Person("Лермонтов", "+74954444444"),
+                        new Person("Фет", "+74952555555"),
+                        new Person("Куприн", "+74951113322"),
+                        new Person("Тютчев", "+74951312244"),
+                        new Person("Бунин", "+74952345678"),
+                        new Person("Гумилев", "+74951113456"),
+                        new Person("Ахматова", "+74951513567"),
+                        new Person("Гумилев", "+74953344544"),
+                        new Person("Толстой", "+74957776543"),
+                        new Person("Блок", "+74955456677"),
+                        new Person("Пушкин", "+74995557890")
+                ))
+        ));
+        testPhonebook(new Phonebook2());
     }
 
     public static List<String> getUniqueElements(List<String> array) {
@@ -44,29 +63,7 @@ public class MainApp {
         System.out.println(getMap(words).size());
     }
 
-    public static void testPhonebook() {
-        Phonebook phonebook = new Phonebook1(new ArrayList<>(Arrays
-                .asList(
-                        new Person("Куприн", "+74952334413"),
-                        new Person("Толстой", "+74993334414"),
-                        new Person("Пушкин", "+74953334444"),
-                        new Person("Пушкин", "+74951544433"),
-                        new Person("Лермонтов", "+74954444444"),
-                        new Person("Фет", "+74952555555"),
-                        new Person("Куприн", "+74951113322"),
-                        new Person("Тютчев", "+74951312244"),
-                        new Person("Бунин", "+74952345678"),
-                        new Person("Гумилев", "+74951113456"),
-                        new Person("Ахматова", "+74951513567"),
-                        new Person("Гумилев", "+74953344544"),
-                        new Person("Толстой", "+74957776543"),
-                        new Person("Блок", "+74955456677"),
-                        new Person("Пушкин", "+74995557890")
-                ))
-        );
-
-        phonebook.print();
-        System.out.println(phonebook.get("Пушкин"));
+    public static void testPhonebook(Phonebook phonebook) {
 
         phonebook.add("Крылов", "+79054443322");
         phonebook.add("Крылов", "+79034566655");
@@ -74,27 +71,10 @@ public class MainApp {
         phonebook.add("Цветаева", "+79031234567");
         phonebook.add("Куприн", "+790311122233");
         phonebook.add("Северянин", "+79030009988");
+
         phonebook.print();
 
-        System.out.println(phonebook.get("Ахматова"));
         System.out.println(phonebook.get("Есенин"));
-        System.out.println(phonebook.get("Толстой"));
         System.out.println(phonebook.get("Куприн"));
-    }
-
-    public static void testPhonebook2() {
-        Phonebook phonebook = new Phonebook2();
-
-        phonebook.add("Крылов", "+79054443322");
-        phonebook.add("Крылов", "+79034566655");
-        phonebook.add("Есенин", "+79033344555");
-        phonebook.add("Цветаева", "+79031234567");
-        phonebook.add("Куприн", "+790311122233");
-        phonebook.add("Северянин", "+79030009988");
-
-        phonebook.print();
-
-        System.out.println(phonebook.get("Куприн"));
-        System.out.println(phonebook.get("Крылов"));
     }
 }
