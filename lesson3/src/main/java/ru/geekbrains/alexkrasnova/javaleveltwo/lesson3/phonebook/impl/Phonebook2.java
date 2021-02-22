@@ -11,14 +11,14 @@ public class Phonebook2 implements Phonebook {
 
     Map<String, List<String>> data;
 
-    public Phonebook2(){
+    public Phonebook2() {
         data = new HashMap<>();
     }
 
     @Override
-    public void add(String surname, String phoneNumber){
+    public void add(String surname, String phoneNumber) {
         List<String> phoneNumbers;
-        if (data.containsKey(surname)){
+        if (data.containsKey(surname)) {
             phoneNumbers = data.get(surname);
         } else {
             phoneNumbers = new ArrayList<>();
@@ -28,12 +28,12 @@ public class Phonebook2 implements Phonebook {
     }
 
     @Override
-    public List<String> get(String surname){
+    public List<String> get(String surname) {
         return data.get(surname);
     }
 
     @Override
-    public void print(){
+    public void print() {
         System.out.println(data);
     }
 }

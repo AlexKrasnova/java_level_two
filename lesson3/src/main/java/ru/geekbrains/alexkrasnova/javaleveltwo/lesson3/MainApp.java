@@ -82,7 +82,7 @@ public class MainApp {
         System.out.println(phonebook.get("Куприн"));
     }
 
-    public static void testPhonebook2(){
+    public static void testPhonebook2() {
         Phonebook phonebook = new Phonebook2();
 
         phonebook.add("Крылов", "+79054443322");

@@ -13,7 +13,7 @@ public class Phonebook1 implements Phonebook {
         this.persons = persons;
     }
 
-    public Phonebook1(){
+    public Phonebook1() {
         persons = new ArrayList<>();
     }
 
