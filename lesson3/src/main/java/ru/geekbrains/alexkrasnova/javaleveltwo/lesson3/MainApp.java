@@ -2,7 +2,8 @@ package ru.geekbrains.alexkrasnova.javaleveltwo.lesson3;
 
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Person;
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Phonebook;
-import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Phonebook2;
+import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.impl.Phonebook1;
+import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.impl.Phonebook2;
 
 import java.util.*;
 
@@ -44,7 +45,7 @@ public class MainApp {
     }
 
     public static void testPhonebook() {
-        Phonebook phonebook = new Phonebook(new ArrayList<>(Arrays
+        Phonebook phonebook = new Phonebook1(new ArrayList<>(Arrays
                 .asList(
                         new Person("Куприн", "+74952334413"),
                         new Person("Толстой", "+74993334414"),
@@ -82,7 +83,7 @@ public class MainApp {
     }
 
     public static void testPhonebook2(){
-        Phonebook2 phonebook = new Phonebook2();
+        Phonebook phonebook = new Phonebook2();
 
         phonebook.add("Крылов", "+79054443322");
         phonebook.add("Крылов", "+79034566655");
