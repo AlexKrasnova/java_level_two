@@ -2,6 +2,7 @@ package ru.geekbrains.alexkrasnova.javaleveltwo.lesson3;
 
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Person;
 import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Phonebook;
+import ru.geekbrains.alexkrasnova.javaleveltwo.lesson3.phonebook.Phonebook2;
 
 import java.util.*;
 
@@ -9,6 +10,7 @@ public class MainApp {
     public static void main(String[] args) {
         testArrayFunctions();
         testPhonebook();
+        testPhonebook2();
     }
 
     public static List<String> getUniqueElements(List<String> array) {
@@ -77,5 +79,21 @@ public class MainApp {
         System.out.println(phonebook.get("Есенин"));
         System.out.println(phonebook.get("Толстой"));
         System.out.println(phonebook.get("Куприн"));
+    }
+
+    public static void testPhonebook2(){
+        Phonebook2 phonebook = new Phonebook2();
+
+        phonebook.add("Крылов", "+79054443322");
+        phonebook.add("Крылов", "+79034566655");
+        phonebook.add("Есенин", "+79033344555");
+        phonebook.add("Цветаева", "+79031234567");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Северянин", "+79030009988");
+
+        phonebook.print();
+
+        System.out.println(phonebook.get("Куприн"));
+        System.out.println(phonebook.get("Крылов"));
     }
 }

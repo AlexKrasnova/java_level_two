@@ -10,6 +10,10 @@ public class Phonebook {
         this.persons = persons;
     }
 
+    public Phonebook(){
+        persons = new ArrayList<>();
+    }
+
     public List<String> get(String surname) {
         List<String> phoneNumbers = new ArrayList<>();
         for (Person person : persons) {
