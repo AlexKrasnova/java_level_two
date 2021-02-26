@@ -49,10 +49,17 @@ public class MainApp {
         phonebook.add("Цветаева", "+79031234567");
         phonebook.add("Куприн", "+790311122233");
         phonebook.add("Северянин", "+79030009988");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Куприн", "+790311122233");
+        phonebook.add("Куприн", "+790311122234");
 
         phonebook.print();
 
         System.out.println(phonebook.get("Есенин"));
         System.out.println(phonebook.get("Куприн"));
+        System.out.println(phonebook.get("Иванов"));
     }
 }
